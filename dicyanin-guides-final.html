@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dicyanin Dye & Kilner Screens — Historical Guides</title>
+  <meta name="description" content="Educational reference on the historical synthesis of dicyanin dye and the assembly of Kilner-style optical screens." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b12; --bg-elevated: #0d1520; --surface: #121c2b; --surface-hover: #182636;
+      --border: rgba(120,160,220,0.12); --border-strong: rgba(120,160,220,0.22);
+      --text: #eef3fb; --text-secondary: #a8b8d0; --text-muted: #6b7f9c;
+      --accent: #4da3ff; --accent-2: #7c6af7; --accent-glow: rgba(77,163,255,0.35);
+      --warning: #ff6b6b; --warning-soft: rgba(255,107,107,0.1); --warning-border: rgba(255,107,107,0.35);
+      --radius: 16px; --radius-sm: 10px; --shadow: 0 12px 40px rgba(0,0,0,0.45);
+      --font: "DM Sans", system-ui, sans-serif; --mono: "JetBrains Mono", monospace;
+      --nav-h: 64px; --ease: cubic-bezier(0.22,1,0.36,1);
+    }
+    [data-theme="light"] {
+      --bg: #f4f7fc; --bg-elevated: #fff; --surface: #fff; --surface-hover: #f0f5fb;
+      --border: rgba(30,60,110,0.1); --border-strong: rgba(30,60,110,0.18);
+      --text: #0f1a2a; --text-secondary: #3d4f6a; --text-muted: #6b7c94;
+      --accent: #2563eb; --accent-2: #5b4cdb; --accent-glow: rgba(37,99,235,0.2);
+      --warning: #dc2626; --warning-soft: rgba(220,38,38,0.08); --warning-border: rgba(220,38,38,0.3);
+      --shadow: 0 12px 40px rgba(15,40,80,0.08);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h)+16px)}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .35s var(--ease),color .35s var(--ease)}
+    .bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .bg-glow::before,.bg-glow::after{content:"";position:absolute;border-radius:50%;filter:blur(100px)}
+    .bg-glow::before{width:520px;height:520px;top:-180px;left:-100px;background:radial-gradient(circle,var(--accent) 0%,transparent 70%);opacity:.18}
+    .bg-glow::after{width:420px;height:420px;bottom:-120px;right:-80px;background:radial-gradient(circle,var(--accent-2) 0%,transparent 70%);opacity:.12}
+    #progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:1000;box-shadow:0 0 12px var(--accent-glow)}
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:900;display:flex;align-items:center;justify-content:center;padding:0 1.25rem;background:color-mix(in srgb,var(--bg) 75%,transparent);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+    .nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.15)}
+    .nav-inner{width:100%;max-width:980px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .nav-brand{font-weight:700;font-size:.95rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+    .nav-brand span{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 10px var(--accent-glow)}
+    .nav-links{display:flex;gap:.25rem;list-style:none}
+    .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;padding:.45rem .85rem;border-radius:8px;transition:color .2s,background .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+    .nav-actions{display:flex;align-items:center;gap:.5rem}
+    .icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s var(--ease)}
+    .icon-btn:hover{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+    .icon-btn svg{width:18px;height:18px}
+    .menu-btn{display:none}
+    .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--bg-elevated);border-bottom:1px solid var(--border);padding:.75rem 1.25rem 1.25rem;z-index:890;flex-direction:column;gap:.35rem;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+    .mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+    .mobile-menu a{color:var(--text-secondary);text-decoration:none;font-weight:500;padding:.75rem 1rem;border-radius:10px}
+    .mobile-menu a:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
+    .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:calc(var(--nav-h) + 2.5rem) 1.25rem 5rem}
+    .hero{text-align:center;margin-bottom:3rem;animation:fadeUp .7s var(--ease) both}
+    .hero-badge{display:inline-flex;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);padding:.4rem .95rem;border-radius:999px;margin-bottom:1.25rem}
+    .hero h1{font-size:clamp(2rem,6vw,2.85rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem;background:linear-gradient(135deg,var(--text) 30%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero .lead{color:var(--text-secondary);font-size:1.1rem;max-width:34em;margin:0 auto 1.75rem;line-height:1.6}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+    .hero-pills a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;padding:.55rem 1.1rem;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface);transition:all .25s var(--ease)}
+    .hero-pills a:hover{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 4px 20px var(--accent-glow);transform:translateY(-1px)}
+    section{margin-bottom:3.25rem;opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+    section.visible{opacity:1;transform:translateY(0)}
+    h2{font-size:1.45rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1.15rem;display:flex;align-items:center;gap:.65rem}
+    h2 .num{font-size:.75rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+    h3{font-size:1.05rem;font-weight:600;color:var(--accent);margin:1.6rem 0 .65rem}
+    p{margin-bottom:.95rem;color:var(--text-secondary)}
+    p strong,li strong{color:var(--text);font-weight:600}
+    .muted{color:var(--text-muted);font-size:.95rem}
+    ul,ol{margin:.4rem 0 1rem 1.2rem}
+    li{margin-bottom:.4rem;color:var(--text-secondary)}
+    li::marker{color:var(--accent)}
+    em{font-style:italic}
+    sub{font-size:.75em}
+    .warning{background:var(--warning-soft);border:1px solid var(--warning-border);border-radius:var(--radius);padding:1.4rem 1.5rem;position:relative;overflow:hidden}
+    .warning::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--warning)}
+    .warning h3{color:var(--warning);margin:0 0 .75rem;font-size:1rem;display:flex;align-items:center;gap:.5rem}
+    .warning p{color:color-mix(in srgb,var(--warning) 70%,var(--text));font-size:.94rem}
+    .warning p:last-child{margin-bottom:0}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem;margin:1.25rem 0;box-shadow:var(--shadow);transition:border-color .25s}
+    .card:hover{border-color:var(--border-strong)}
+    .card h3{margin-top:0;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .card h3 svg{width:18px;height:18px}
+    .steps{margin:1.5rem 0}
+    .step{display:grid;grid-template-columns:40px 1fr;gap:1rem;padding:1.15rem 0;border-bottom:1px solid var(--border)}
+    .step:last-child{border-bottom:none}
+    .step-num{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:700;font-size:.95rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px var(--accent-glow);flex-shrink:0}
+    .step-body h4{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .step-body p{margin-bottom:0;font-size:.94rem;color:var(--text-secondary)}
+    .accordion{border:1px solid var(--border);border-radius:var(--radius-sm);margin:1rem 0;overflow:hidden;background:var(--surface)}
+    .accordion-btn{width:100%;text-align:left;background:transparent;border:none;color:var(--text);font-family:var(--font);font-size:.95rem;font-weight:600;padding:1rem 1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .2s}
+    .accordion-btn:hover{background:var(--surface-hover)}
+    .accordion-btn svg{width:18px;height:18px;transition:transform .3s var(--ease);color:var(--text-muted);flex-shrink:0}
+    .accordion.open .accordion-btn svg{transform:rotate(180deg)}
+    .accordion-panel{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+    .accordion-panel-inner{padding:0 1.2rem 1.15rem;color:var(--text-secondary);font-size:.94rem}
+    .sources{list-style:none;margin-left:0}
+    .sources li{position:relative;padding:.85rem 0 .85rem 1.1rem;border-bottom:1px solid var(--border);font-size:.9rem;margin-bottom:0}
+    .sources li:last-child{border-bottom:none}
+    .sources li::before{content:"";position:absolute;left:0;top:1.15rem;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .sources strong{color:var(--text)}
+    footer{margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.85rem}
+    footer p{color:var(--text-muted);margin-bottom:.4rem}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:720px){
+      .nav-links{display:none}.menu-btn{display:flex}
+      .hero h1{font-size:1.75rem}
+      .step{grid-template-columns:32px 1fr;gap:.75rem}
+      .step-num{width:32px;height:32px;font-size:.85rem;border-radius:10px}
+      .mobile-menu{display:flex}
+      .mobile-menu:not(.open){opacity:0;pointer-events:none;transform:translateY(-8px)}
+    }
+    @media print{
+      .bg-glow,.nav,#progress,.icon-btn,.mobile-menu,.hero-pills{display:none!important}
+      body{background:#fff;color:#111}.wrap{padding-top:1rem}
+      section{opacity:1!important;transform:none!important}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand"><span></span> Dicyanin Guides</a>
+      <ul class="nav-links">
+        <li><a href="#disclaimer">Safety</a></li>
+        <li><a href="#dye">Dye Synthesis</a></li>
+        <li><a href="#glasses">Screens</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#disclaimer">Safety Disclaimer</a>
+    <a href="#dye">Dye Synthesis Guide</a>
+    <a href="#glasses">Screens / Glasses Guide</a>
+    <a href="#sources">Sources &amp; References</a>
+  </div>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-badge">Historical Chemistry Reference</div>
+      <h1>Dicyanin Dye &amp;<br/>Kilner Screens</h1>
+      <p class="lead">Two practical guides compiled from early 20th-century scientific literature: chemical synthesis of the dye, and assembly of the historical optical screens.</p>
+      <div class="hero-pills">
+        <a href="#dye">Dye Synthesis →</a>
+        <a href="#glasses">Screens Guide →</a>
+        <a href="#sources">Primary Sources →</a>
+      </div>
+    </header>
+
+    <section id="disclaimer">
+      <div class="warning">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Critical Safety &amp; Legal Disclaimer
+        </h3>
+        <p><strong>This page describes hazardous laboratory chemistry and the historical construction of optical filters.</strong> Dicyanin (dicyanine) is a toxic synthetic dye. The reagents required for its synthesis (sodium metal, ethyl iodide, sodium sulfide, chloroform, strong bases, organic solvents) are flammable, reactive, toxic, or regulated. Attempting synthesis outside a properly equipped laboratory with a fume hood, PPE, waste disposal, and experienced supervision is extremely dangerous and may be illegal depending on local regulations.</p>
+        <p>The “aura-viewing” claims associated with Kilner screens have <strong>never been independently scientifically validated</strong>. Reported visual effects are consistent with ordinary colored-filter afterimages, contrast enhancement, and expectation. Prolonged viewing was noted by Kilner himself to cause eye pain.</p>
+        <p><strong>Do not attempt any of these procedures at home or without professional laboratory facilities and training.</strong> This document is provided strictly for educational and historical reference.</p>
+      </div>
+    </section>
+
+    <section id="dye">
+      <h2><span class="num">1</span> Synthesis of Dicyanin (Dicyanine A)</h2>
+      <p>Dicyanin is a synthetic <strong>carbocyanine dye</strong> historically used as a photographic sensitizer for the red and near-infrared region. Chemically it is built from quinoline ring systems linked by a polymethine bridge (typical formula range C<sub>25</sub>H<sub>25</sub>IN<sub>2</sub> for the iodide salt).</p>
+      <p class="muted">The improved laboratory method below is based primarily on Palkin’s 1923 work, which gave substantially higher yields than the earlier Mikeska–Haller–Adams sodium-ethylate route.</p>
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6v2H9zM8 5h8l1 3v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8l1-3z"/><path d="M10 12h4M10 16h4"/></svg> Materials Required (Laboratory Scale)</h3>
+        <ul>
+          <li>2,4-Dimethyl-6-ethoxyquinoline (starting base)</li>
+          <li>Ethyl iodide (iodoethane)</li>
+          <li>Sodium sulfide nonahydrate (Na<sub>2</sub>S·9H<sub>2</sub>O)</li>
+          <li>95% ethanol and absolute ethanol</li>
+          <li>Chloroform (catalyst)</li>
+          <li>Diethyl ether (for washing)</li>
+          <li>Sodium metal (only for older sodium-ethylate method)</li>
+          <li>Standard organic lab glassware, steam/controlled bath (~50°C), suction filtration</li>
+          <li>Full PPE: chemical-resistant gloves, goggles, lab coat, fume hood</li>
+        </ul>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Prepare the Intermediate (Ethiodide)</h4><p>Combine 2,4-dimethyl-6-ethoxyquinoline with roughly an equal weight of ethyl iodide. Heat briefly on a steam bath until solid. Wash with diethyl ether. Recrystallize several times from boiling 95% ethanol. Dry. This quaternary salt is the key intermediate.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Prepare Alcoholic Sodium Sulfide Solution</h4><p>Boil ~25 g Na<sub>2</sub>S·9H<sub>2</sub>O in 100 mL of 95% ethanol for ~2 minutes. Cool and filter. This is the working alkaline solution.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Condensation to Form the Dye (Palkin Method)</h4><p>Use ~1 g ethiodide intermediate per 25 mL alcoholic sodium sulfide solution. Dissolve intermediate in the (warm) sulfide solution. Quickly add ~1.5 mL chloroform per gram intermediate as catalyst. Warm at ~50°C for 30 minutes (up to ~1 hour). Cool. The dye precipitates.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Isolation and Washing</h4><p>Filter by suction. Wash successively with 95% ethanol, diethyl ether, water (to remove salts), then ethanol and ether again. Air-dry, protected from light. Product is typically a dark green crystalline solid with metallic sheen. Solutions appear intensely blue/green and may show dichroism.</p></div></div>
+      </div>
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Notes on older methods &amp; yields <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">
+          <p>Earlier routes used KOH + atmospheric oxygen on α,γ-dimethylquinolinium salts, or sodium ethylate/methylate in absolute alcohol. Yields were very low and products often contaminated with cyanines and tar. Palkin’s sodium-sulfide + chloroform procedure improved recovery by roughly an order of magnitude.</p>
+          <p style="margin-bottom:0">Historical yields remained modest. Spectroscopic checks (absorption near ~670 nm vs ~620 nm for accompanying cyanine) and photographic sensitization tests were used to evaluate product quality.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="glasses">
+      <h2><span class="num">2</span> Kilner-Style Screens / Glasses</h2>
+      <p>Walter J. Kilner (medical electrician at St. Thomas’ Hospital, London) described glass cells or screens containing alcoholic solutions of dicyanin in his 1911 book <em>The Human Atmosphere</em> (later <em>The Human Aura</em>). He claimed viewing through these screens trained the eyes to perceive a faint envelope around the body.</p>
+      <p class="muted">Independent scientific verification of any paranormal effect has never been obtained; visual phenomena are consistent with ordinary filter after-effects.</p>
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9h12v6H6z"/></svg> Materials Required</h3>
+        <ul>
+          <li>Dicyanin (or dicyanine A) powder — toxic, scarce, degrades with light/heat</li>
+          <li>Absolute or high-purity ethanol</li>
+          <li>Two clean, flat optical glass plates or high-quality microscope slides</li>
+          <li>Thin spacers (~0.1–0.5 mm)</li>
+          <li>Sealant compatible with alcohol (optical epoxy, paraffin wax, or gasket)</li>
+          <li>Pipette/dropper, clean glass vial</li>
+          <li>Dark, cool storage</li>
+          <li>Protective equipment (gloves, eye protection, ventilation)</li>
+        </ul>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Prepare Stock Dye Solution</h4><p>Dissolve a small quantity of dicyanin powder in ethanol. Historical starting point: ~0.1 g dye in 100 mL alcohol (~1:1000). Stir gently. Solution is typically deep blue-green to violet. Keep cool and fully protected from light. Use fresh; solution does not keep well.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Clean and Prepare Glass Plates</h4><p>Thoroughly clean both plates of dust, grease, and fingerprints. Dry completely. Residue creates optical defects or degradation sites.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Assemble the Liquid Cell</h4><p>Place thin spacers along edges of one plate (gap typically 0.1–0.5 mm). Pipette dye solution to fill the gap when the second plate is applied. Lower the second plate carefully, excluding air bubbles. Thin path length keeps the screen usable while providing strong coloration.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Seal the Edges</h4><p>Seal all edges thoroughly so alcohol cannot evaporate and liquid cannot leak. Optical epoxy or wax was used historically. Result is a flat glass sandwich. Kilner used both darker screens (brief initial sky viewing) and lighter ones for observation.</p></div></div>
+      </div>
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Historical viewing procedure &amp; modern notes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">
+          <p><strong>Historical procedure:</strong> Controlled lighting (often north-facing window + dark background). Look through a dark screen at bright sky 30–45 seconds, then switch to a lighter screen (or none after “training”) while viewing a subject against a dark background. Kilner noted prolonged use caused painful eyes.</p>
+          <p style="margin-bottom:0"><strong>Modern considerations:</strong> True dicyanin is hard to obtain, expensive, toxic, and unstable. Modern “dicyanin-style” filters often use stable coatings or alternative dyes approximating the transmission curve. Safer substitutes (cobalt-blue/purple glass, certain theatrical gels) exist but are not chemically identical. Liquid cells still risk leakage and degradation.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2><span class="num">§</span> Sources &amp; References</h2>
+      <p class="muted">Drawn from publicly available early scientific literature, historical monographs, and secondary compilations.</p>
+      <ul class="sources">
+        <li><strong>Mikeska, L. A.; Haller, H. I.; Adams, E. Q.</strong> (1920). “Synthesis of Photosensitizing Dyes (II), Dicyanine A.” <em>J. Am. Chem. Soc.</em>, 42, 2392.</li>
+        <li><strong>Palkin, S.</strong> (1923). “The Synthesis of Dicyanine.” <em>Ind. Eng. Chem.</em>, 15(4), 379–381.</li>
+        <li><strong>Mills, W. H.; Odams, R. C.</strong> (1924). Carbocyanine constitution of the dicyanines.</li>
+        <li><strong>Kilner, W. J.</strong> (1911). <em>The Human Atmosphere</em> (later <em>The Human Aura</em>).</li>
+        <li><strong>Kilner, W. J.</strong> (1912). “The Shifting of the Chromatic Focus of the Eye by the Use of a Dicyanin Screen.” <em>Archives of the Roentgen Ray</em>.</li>
+        <li>Beacall, Martin et al., <em>Dyestuffs &amp; Coal-Tar Products</em> (1915).</li>
+        <li>NIST / Bureau of Standards historical bulletins on photographic sensitization with dicyanin.</li>
+        <li>Wikipedia (Walter John Kilner); archive.org digitized secondary sources and chemistry compilations.</li>
+      </ul>
+      <p class="muted" style="margin-top:1.25rem"><strong>Note on availability:</strong> Core 1920s synthesis papers are indexed in major databases and appear via Google Books, publisher archives, and institutional repositories. Kilner’s books are public-domain/archive available. Material is obscure rather than secret.</p>
+    </section>
+
+    <footer>
+      <p>Educational &amp; historical reference only. Not advice to perform chemical synthesis or optical experiments.</p>
+      <p>Always consult current safety data sheets, institutional review, and applicable regulations before any laboratory work involving these substances.</p>
+    </footer>
+  </div>
+
+  <script>
+    const root=document.documentElement,themeBtn=document.getElementById('themeToggle');
+    const moon=themeBtn.querySelector('.icon-moon'),sun=themeBtn.querySelector('.icon-sun');
+    if(localStorage.getItem('theme')==='light'){root.setAttribute('data-theme','light');moon.style.display='none';sun.style.display='block'}
+    themeBtn.addEventListener('click',()=>{
+      const light=root.getAttribute('data-theme')==='light';
+      if(light){root.removeAttribute('data-theme');localStorage.setItem('theme','dark');moon.style.display='block';sun.style.display='none'}
+      else{root.setAttribute('data-theme','light');localStorage.setItem('theme','light');moon.style.display='none';sun.style.display='block'}
+    });
+    const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+    const progress=document.getElementById('progress'),nav=document.getElementById('nav');
+    const sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-links a');
+    function onScroll(){
+      const st=window.scrollY,docH=document.documentElement.scrollHeight-window.innerHeight;
+      progress.style.width=(docH>0?(st/docH)*100:0)+'%';
+      nav.classList.toggle('scrolled',st>20);
+      let cur='';sections.forEach(s=>{if(st>=s.offsetTop-120)cur=s.id});
+      navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('section').forEach(s=>obs.observe(s));
+    document.querySelectorAll('.accordion').forEach(acc=>{
+      const btn=acc.querySelector('.accordion-btn'),panel=acc.querySelector('.accordion-panel');
+      btn.addEventListener('click',()=>{const open=acc.classList.contains('open');acc.classList.toggle('open');btn.setAttribute('aria-expanded',!open);panel.style.maxHeight=open?'0':panel.scrollHeight+'px'});
+    });
+    window.addEventListener('resize',()=>{if(window.innerWidth>720)mobileMenu.classList.remove('open')});
+  </script>
+</body>
+</html>
