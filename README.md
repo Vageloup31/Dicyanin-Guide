@@ -1,27 +1,44 @@
-# Dicyanin Dye & Kilner Screens
+# Dicyanin Guide
 
-Educational reference on the historical synthesis of **dicyanin (dicyanine A)** dye and the assembly of Kilner-style optical screens.
+Educational, historical reference site about **dicyanin (dicyanine A)** dye and **Kilner-style screens**.
 
 **Live site:** [https://vageloup31.github.io/Dicyanin-Guide/](https://vageloup31.github.io/Dicyanin-Guide/)
 
-## Contents
-- Guide to the classic laboratory synthesis of dicyanin dye (based on early 20th-century methods)
-- Guide to assembling Kilner-style liquid-cell screens
-- Historical context and primary sources
+## What this is
 
-## Important Disclaimer
-This repository is for **educational and historical reference only**.
+- Plain-language explanations of historical **lab synthesis** (especially Palkin 1923 and Mikeska–Haller–Adams 1920)
+- How **Kilner** (1911) described alcohol-filled glass cells (“screens”)
+- Safety framing, failure modes, myth vs record
+- Optional **on-device AI** helper (WebLLM / Transformers.js) — runs in your browser; not required
 
-Dicyanin is a toxic synthetic dye. The chemicals involved in its preparation are hazardous.  
-Do **not** attempt any synthesis or experiments without proper laboratory facilities, training, and safety equipment.
+## What this is not
 
-The “aura-viewing” claims associated with Kilner screens have never been scientifically validated.
+- **Not** advice to synthesize chemicals at home  
+- **Not** a medical or diagnostic tool  
+- **Not** proof of supernatural “auras”  
+- Authentic dicyanin is **toxic** and belongs only in trained laboratory settings  
 
-## Sources
-Based on early scientific literature, including:
-- Mikeska, Haller & Adams (1920)
-- Palkin (1923)
-- Kilner’s *The Human Atmosphere* (1911)
-- Related historical and technical references
+## Files
 
----
+| File | Purpose |
+|------|---------|
+| `index.html` | Entire site (single-file app) |
+| `README.md` | This file |
+
+## Use offline
+
+1. Open the live site, or download `index.html`
+2. Open the file in a modern browser  
+3. Optional: **Local Help → Load tiny** for a smaller on-device model (better on phones)
+
+## Main sources
+
+- Kilner, W. J. (1911). *The Human Atmosphere* — [Internet Archive](https://archive.org/details/humanatmosphereo00kiln)
+- Mikeska, L. A.; Haller, H. L.; Adams, E. Q. (1920). *J. Am. Chem. Soc.* 42, 2392–2394
+- Palkin, S. (1923). *Ind. Eng. Chem.* 15(4), 379–381
+
+## License / use
+
+Content is for **education and historical reference**. Primary literature remains with original publishers where applicable. Public-domain book material (e.g. Kilner 1911) is cited accordingly.
+
+Built as a static GitHub Pages site. Contributions via PR welcome if they preserve safety framing and source accuracy.
